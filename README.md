@@ -12,6 +12,7 @@ A modern, responsive website for Taller Medina, a professional mechanical worksh
 - **Classic Car Gallery**: Showcase of restoration work
 - **Social Media Integration**: Links to Facebook, Instagram, and Twitter
 - **Language Switching**: Toggle between Spanish and English languages
+- **Keyboard Navigation**: Press Escape key to close mobile menu and modals
 
 ## Technologies Used
 - **HTML5**: Semantic structure and accessibility
@@ -43,7 +44,13 @@ A modern, responsive website for Taller Medina, a professional mechanical worksh
    - Or use any static file server
 
 ## Language Support
-The website supports both Spanish and English languages. Click the language toggle button (EN/ES) in the navigation bar to switch between languages. The selected language is saved in your browser's local storage for future visits.
+The website supports both Spanish and English languages. Click the language toggle button (EN/ES) in the navigation bar to switch between languages. On mobile devices, the language toggle is available in the hamburger menu. The selected language is saved in your browser's local storage for future visits.
+
+## Accessibility Features
+- **Keyboard Navigation**: Full keyboard accessibility support
+- **Escape Key**: Press the Escape key to close mobile menus and modals
+- **Focus Management**: Proper focus indicators and tab navigation
+- **Screen Reader Support**: Semantic HTML structure and ARIA labels where appropriate
 
 ## Services Offered
 1. **Computerized Diagnostics**

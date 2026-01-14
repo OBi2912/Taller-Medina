@@ -252,10 +252,14 @@ function switchLanguage(lang) {
         }
     });
 
-    // Update language toggle button
+    // Update language toggle buttons (both desktop and mobile)
     const langText = document.getElementById('lang-text');
+    const mobileLangText = document.getElementById('mobile-lang-text');
     if (langText) {
         langText.textContent = lang === 'es' ? 'EN' : 'ES';
+    }
+    if (mobileLangText) {
+        mobileLangText.textContent = lang === 'es' ? 'EN' : 'ES';
     }
 
     // Store language preference
@@ -268,13 +272,29 @@ document.addEventListener('DOMContentLoaded', () => {
     switchLanguage(savedLang);
 });
 
-// Language toggle button event listener
+// Language toggle button event listeners (both desktop and mobile)
 document.addEventListener('DOMContentLoaded', () => {
     const langToggle = document.getElementById('lang-toggle');
+    const mobileLangToggle = document.getElementById('mobile-lang-toggle');
+
+    const handleLangToggle = () => {
+        const newLang = currentLang === 'es' ? 'en' : 'es';
+        switchLanguage(newLang);
+    };
+
     if (langToggle) {
-        langToggle.addEventListener('click', () => {
-            const newLang = currentLang === 'es' ? 'en' : 'es';
-            switchLanguage(newLang);
+        langToggle.addEventListener('click', handleLangToggle);
+    }
+
+    if (mobileLangToggle) {
+        mobileLangToggle.addEventListener('click', () => {
+            handleLangToggle();
+            // Close mobile menu after language switch
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('show');
+            }
         });
     }
 });
@@ -679,6 +699,21 @@ document.querySelectorAll('button').forEach(button => {
 // Console message
 console.log('%c🔧 Taller Medina', 'font-size: 24px; font-weight: bold; color: #f97316;');
 console.log('%cSitio web desarrollado con ❤️', 'font-size: 14px; color: #94a3b8;');
+
+// Global Escape key handler for closing modals/menus
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        // Close mobile menu if open
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('show');
+        }
+
+        // Add additional modal closing logic here for future modals
+        // Example: closeModalFunction();
+    }
+});
 
 // Initialize all animations on page load
 window.addEventListener('load', () => {
