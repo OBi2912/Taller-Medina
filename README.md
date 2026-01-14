@@ -11,6 +11,7 @@ A modern, responsive website for Taller Medina, a professional mechanical worksh
 - **About Section**: Company history, owner information, and key features
 - **Classic Car Gallery**: Showcase of restoration work
 - **Social Media Integration**: Links to Facebook, Instagram, and Twitter
+- **Language Switching**: Toggle between Spanish and English languages
 
 ## Technologies Used
 - **HTML5**: Semantic structure and accessibility
@@ -40,6 +41,9 @@ A modern, responsive website for Taller Medina, a professional mechanical worksh
    - Use VS Code Live Server extension
    - Or run: `python -m http.server 8000` (Python 3)
    - Or use any static file server
+
+## Language Support
+The website supports both Spanish and English languages. Click the language toggle button (EN/ES) in the navigation bar to switch between languages. The selected language is saved in your browser's local storage for future visits.
 
 ## Services Offered
 1. **Computerized Diagnostics**
